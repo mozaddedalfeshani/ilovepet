@@ -36,8 +36,41 @@ buttonBirds.addEventListener("click", () => handleButtonClick(buttonBirds));
 
 ///////////////////////////////////////
 
+function showSpinner() {
+    // Get the spinner container (where the spinner will be shown)
+    const gallery = document.getElementById("gallery");
+  
+    // If the gallery element doesn't exist, log an error and return
+    if (!gallery) {
+      console.error("Gallery element not found.");
+      return;
+    }
+  
+    // Set the gallery content to a spinner that is centered absolutely
+    gallery.innerHTML = `
+
+      <div class=" inset-0 flex justify-center items-center bg-white bg-opacity-50">
+        <div class="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-blue-500"></div>
+      </div>
+    `;
+  
+    // Hide the spinner after 2 seconds
+    setTimeout(() => {
+      gallery.innerHTML = ""; // Clear the spinner (empty the gallery)
+    }, 2000); // Spinner will be visible for 2 seconds (2000 milliseconds)
+  }
+  
+  
+
+//////////////////////////////////////////
+
 // Main function to fetch pet data and initialize the gallery
 async function initPetGallery(apiUrl) {
+   showSpinner();
+
+   setTimeout(async() => {
+    
+   
   const gallery = document.getElementById("gallery");
   if (!gallery) {
     console.error("Gallery element not found.");
@@ -64,6 +97,7 @@ async function initPetGallery(apiUrl) {
   } catch (error) {
     console.error("Error fetching pet data:", error);
   }
+}, 2050);
 }
 
 // Function to add pet cards to the gallery
@@ -85,9 +119,9 @@ function addPetCard(pet) {
               <span class="mr-2">🧬</span> 
               <span>Breed: ${pet.breed || "N/A"}</span>
             </p>
-            <p class="flex items-center">
+            <p class="flex items-center"> 
               <span class="mr-2">📅</span>
-              <span>Birth: ${pet.date_of_birth || "Unknown"}</span>
+              <span>Birth: ${pet.date_of_birth || "Not Available"}</span>
             </p>
             <p class="flex items-center">
               <span class="mr-2">♀️</span>
@@ -225,7 +259,7 @@ function addPetCard(pet) {
             </p>
             <p class="flex items-center">
               <span class="mr-2">📅</span>
-              <span>Birth: ${pet.date_of_birth || "Unknown"}</span>
+              <span>Birth: ${pet.date_of_birth || "Not Available"}</span>
             </p>
             <p class="flex items-center">
               <span class="mr-2">♀️</span>
@@ -286,38 +320,45 @@ const modalSection = document.getElementById("modalSection");
 const showDetails = (id) => {
     const newApiUrl = "https://openapi.programming-hero.com/api/peddy/pet/" + id;
     console.log(newApiUrl);
-    console.log("its happened with ID: " + id);
+    console.log("Its happened with ID: " + id);
   
-    // Clear previous modal content and show the modal
+    // Get modalDiv and show the spinner immediately
     const modalDiv = document.getElementById("modalDiv");
-    modalDiv.innerHTML = ""; // Clear previous content
+    modalDiv.innerHTML = `
+      <div class="flex justify-center items-center h-full">
+        <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-500"></div>
+      </div>
+    `;
     modalDiv.classList.remove("hidden");
   
-    // Fetch the pet details
-    fetch(newApiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        const pet = data.petData; // Accessing petData from response
+    // Show the spinner for 2 seconds before fetching the data
+    setTimeout(() => {
+      // Fetch pet data after 2 seconds
+      fetch(newApiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const pet = data.petData; // Accessing petData from response
   
-        // Creating the modal content with fetched pet details
-        modalDiv.innerHTML = `
-          <div class="bg-white p-6 rounded-md shadow-md max-w-md mx-auto">
-            <img src="${pet.image}" alt="${pet.pet_name}" class="w-full h-auto rounded-md">
-            <h2 class="text-xl font-bold mt-4">${pet.pet_name}</h2>
-            <p class="mt-2"><strong>Breed:</strong> ${pet.breed}</p>
-            <p><strong>Gender:</strong> ${pet.gender}</p>
-            <p><strong>Vaccinated Status:</strong> ${pet.vaccinated_status}</p>
-            <p><strong>Date of Birth:</strong> ${pet.date_of_birth}</p>
-            <p><strong>Price:</strong> $${pet.price}</p>
-            <p class="mt-4">${pet.pet_details}</p>
-            <button onclick="closeModal()" class="mt-4 btn bg-red-500 text-white w-full">Close</button>
-          </div>
-        `;
-      })
-      .catch((error) => {
-        console.error('Error fetching pet details:', error);
-        modalDiv.innerHTML = `<p class="text-red-500">Error fetching pet details. Please try again later.</p>`;
-      });
+          // Replace spinner with pet details in the modal
+          modalDiv.innerHTML = `
+            <div class="bg-white p-6 rounded-md shadow-md max-w-md mx-auto">
+              <img src="${pet.image}" alt="${pet.pet_name}" class="w-full h-auto rounded-md">
+              <h2 class="text-xl font-bold mt-4">${pet.pet_name}</h2>
+              <p class="mt-2"><strong>Breed:</strong> ${pet.breed}</p>
+              <p><strong>Gender:</strong> ${pet.gender}</p>
+              <p><strong>Vaccinated Status:</strong> ${pet.vaccinated_status}</p>
+              <p><strong>Date of Birth:</strong> ${pet.date_of_birth}</p>
+              <p><strong>Price:</strong> $${pet.price}</p>
+              <p class="mt-4">${pet.pet_details}</p>
+              <button onclick="closeModal()" class="mt-4 btn bg-red-500 text-white">Close</button>
+            </div>
+          `;
+        })
+        .catch((error) => {
+          console.error('Error fetching pet details:', error);
+          modalDiv.innerHTML = `<p class="text-red-500">Error fetching pet details. Please try again later.</p>`;
+        });
+    }, 2000); // 2-second delay before fetching the data
   };
   
   // Function to close the modal
