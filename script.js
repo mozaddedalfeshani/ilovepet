@@ -117,7 +117,7 @@ window.onload = () => initPetGalleryy(petsApiUrl);
 
 
 //////////////////////////////////////////////////////////////
-
+let petData = []; // Declare a variable to hold the fetched pet data
 
 async function initPetGalleryy(apiUrl) {
     const gallery = document.getElementById('gallery');
@@ -131,17 +131,36 @@ async function initPetGalleryy(apiUrl) {
 
     try {
         const response = await fetch(apiUrl);
-        const data = await response.json();
-        console.log('Fetched data:', data); // Debugging: Log the fetched data
+        petData = await response.json(); // Store the fetched data
+        console.log('Fetched data:', petData); // Debugging: Log the fetched data
 
-        if (data && data.pets) {
-            data.pets.forEach(pet => addPetCard(pet));
+        if (petData && petData.pets) {
+            // Initially display the pets without sorting
+            petData.pets.forEach(pet => addPetCard(pet));
         } else {
-            console.error('No pets found in the data:', data); // Debugging: Log an error if no pets found
+            console.error('No pets found in the data:', petData); // Debugging: Log an error if no pets found
         }
     } catch (error) {
         console.error('Error fetching pet data:', error);
     }
+}
+
+// Function to sort and display pets by descending price
+function sortPetsByPrice() {
+    const gallery = document.getElementById('gallery');
+    if (!gallery) {
+        console.error("Gallery element not found.");
+        return;
+    }
+
+    // Clear the existing gallery content
+    gallery.innerHTML = '';
+
+    // Sort the pets array by descending price
+    petData.pets.sort((a, b) => b.price - a.price);
+
+    // Loop through the sorted pets and add each pet card to the gallery
+    petData.pets.forEach(pet => addPetCard(pet));
 }
 
 // Function to add pet cards to the gallery
