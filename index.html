@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Take Your Pet</title>
+  </head>
+  <body class="">
+    <!-- Header  -->
+    <header class="container mx-auto">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <img src="./images/logo.webp"  />
+          <a class="p-1 text-xl text-[32px] font-black">Peddy</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li class="text-[16px]"><a>Home</a></li>
+            <li class="text-[16px]"><a>Shop</a></li>
+            <li class="text-[16px]"><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end rounded-full">
+          <a
+            class="border w-[35px] items-center justify-center flex rounded-full h-[35px]"
+            ><img
+              class="w-[18px] h-[18px]"
+              src="./images/user.png"
+              alt=""
+              srcset=""
+          /></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero section  -->
+      <section id="main">
+        <div
+          class="container mx-auto flex flex-col items-center justify-center"
+        >
+          <p class="text-[24px] font-bold text-[#13131399] text-center">
+            Bringing Families Together ❤️‍🔥
+          </p>
+          <p class="text-center text-[72px] font-black md:w-[772px]">
+            Your Path to Adoption Starts Here
+          </p>
+          <p class="text-center font-normal text-[16px] md:w-[752px]">
+            Discover the Joy of Building a Family" could be a compelling next
+            line. It invites readers to embrace the journey of adoption with
+            warmth and positivity
+          </p>
+          <button class="btn bg-[#0E7A81] text-white mt-2">View More</button>
+          <img
+            class="md:w-[800px] md:h-[450px]"
+            src="./images/pet.webp"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </section>
+        <!-- New section that will interect with js and complile  -->
+
+      <section class="container mx-auto flex flex-col items-center justify-center">
+        <h1 class="font-black text-[40px] text-[#131313] text-center">Adopt Your Best Friend</h1>
+        <p class="text-[16px] font-normal text-center ">
+          Give a Loving Home to a Pet in Need.
+          Create Unforgettable Memories Together!
+        </p>
+        <!-- now buttons are below for connect to api with js -->
+         <div class="buttonDiv flex items-center justify-between container mx-auto px-3" id="buttonShow ">
+          <button class="btn md:w-[312px] md:h-[100px]  bg-emerald-300">
+            <img src="" >
+            <p>Dog</p>
+          </button>
+          
+         </div>
+      </section>
+    </main>
+
+    <!-- Footer section  -->
+    <section class="container mx-auto ">
+      <footer class="bg-neutral-900 text-neutral-content py-7">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-around">
+          <!-- Left Column: Brand and Contact Information -->
+          <div>
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+              <span class="mr-2 text-teal-400"><img src="./images/logo.webp" alt=""></span> Peddy
+            </h2>
+            <p>Location: av. Washington 165, NY CA 54003</p>
+            <p>Phone: +31 85 964 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Opening hours: 9:00 AM - 5:00 PM</p>
+            <!-- Social Icons -->
+            <div class="flex mt-4 space-x-4">
+              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
+                <img src="./images/facebook.png" alt="">
+              </a>
+              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
+                <img src="./images/twitter.png" alt="">
+              </a>
+              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
+                <img src="./images/youtube.png" alt="">
+              </a>
+              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
+                <img src="./images/instagram.png" alt="">
+              </a>
+            </div>
+          </div>
+      
+          <!-- Center Column: Useful Links -->
+          <div>
+            <h2 class="text-lg font-bold mb-4">Useful Links</h2>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-teal-400">Home</a></li>
+              <li><a href="#" class="hover:text-teal-400">About Us</a></li>
+              <li><a href="#" class="hover:text-teal-400">Animals</a></li>
+              <li><a href="#" class="hover:text-teal-400">Foundation</a></li>
+              <li><a href="#" class="hover:text-teal-400">Contact</a></li>
+            </ul>
+          </div>
+      
+          <!-- Right Column: Subscription Form -->
+          <div>
+            <h2 class="text-lg font-bold mb-4">Drop a Message</h2>
+            <div class="flex flex-col">
+              <input type="email" placeholder="Enter your email" class="input input-bordered w-full mb-4 bg-neutral-800 text-neutral-content"/>
+              <button class="btn btn-primary bg-teal-400 hover:bg-teal-500 text-white">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
