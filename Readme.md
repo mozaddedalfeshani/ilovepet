@@ -1,6 +1,4 @@
-# <h1 style="text-align: center;color:blue;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7u4_Ku6LXW3fnAG462cKAY1YL5mMW1QSKZw&s" style="width:63px;">Pet Adoption Gallery</h1>
-## Project Name
-# <h1 style="text-align: center;color:blue;">Pet Adoption Gallery</h1>
+# <h1 style="text-align: center;color:blue;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7u4_Ku6LXW3fnAG462cKAY1YL5mMW1QSKZw&s" style="width:63px;"> <span style="text-align: center;color:blue;">Pet Adoption Gallery</span></h1>
 
 ## Description
 The Pet Adoption Gallery is a web application designed to help users find their ideal pets for adoption. It showcases various pets available for adoption with detailed information, including breed, date of birth, gender, and price. Users can easily browse through the gallery and learn more about each pet.
