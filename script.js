@@ -111,10 +111,10 @@ function addPetCard(pet) {
   const petCard = `
         <div class="card w-96 bg-base-100 shadow-md rounded-lg p-4">
           <figure>
-            <img src="${pet.image}" alt="${pet.pet_name}" class="rounded-lg" />
+            <img src="${pet.image}" alt="${pet.pet_name }" class="rounded-lg" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title text-2xl font-bold">${pet.pet_name}</h2>
+            <h2 class="card-title text-2xl font-bold">${pet.pet_name || "Not Available"}</h2>
             <p class="flex items-center">
               <span class="mr-2">🧬</span> 
               <span>Breed: ${pet.breed || "N/A"}</span>
@@ -263,7 +263,7 @@ function addPetCard(pet) {
             </p>
             <p class="flex items-center">
               <span class="mr-2">♀️</span>
-              <span>Gender: ${pet.gender}</span>
+              <span>Gender: ${pet.gender || "Not Available"}</span>
             </p>
             <p class="flex items-center">
               <span class="mr-2">💲</span>
@@ -342,14 +342,14 @@ const showDetails = (id) => {
           // Replace spinner with pet details in the modal
           modalDiv.innerHTML = `
             <div class="bg-white p-6 rounded-md shadow-md max-w-md mx-auto">
-              <img src="${pet.image}" alt="${pet.pet_name}" class="w-full h-auto rounded-md">
-              <h2 class="text-xl font-bold mt-4">${pet.pet_name}</h2>
-              <p class="mt-2"><strong>Breed:</strong> ${pet.breed}</p>
-              <p><strong>Gender:</strong> ${pet.gender}</p>
+              <img src="${pet.image}" alt="${pet.pet_name || "Not Available"}" class="w-full h-auto rounded-md">
+              <h2 class="text-xl font-bold mt-4">${pet.pet_name || "Not Available"}</h2>
+              <p class="mt-2"><strong>Breed:</strong> ${pet.breed|| "Not Available"}</p>
+              <p><strong>Gender:</strong> ${pet.gender ||"Not Available"}</p>
               <p><strong>Vaccinated Status:</strong> ${pet.vaccinated_status}</p>
               <p><strong>Date of Birth:</strong> ${pet.date_of_birth}</p>
-              <p><strong>Price:</strong> $${pet.price}</p>
-              <p class="mt-4">${pet.pet_details}</p>
+              <p><strong>Price:</strong> $${pet.price || "Not Available"}</p>
+              <p class="mt-4">${pet.pet_details || "Not Available"}</p>
               <button onclick="closeModal()" class="mt-4 btn bg-red-500 text-white">Close</button>
             </div>
           `;
