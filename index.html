@@ -58,7 +58,7 @@
             line. It invites readers to embrace the journey of adoption with
             warmth and positivity
           </p>
-          <button class="btn bg-[#0E7A81] text-white mt-2">View More</button>
+          <a href="#main"><button  class="btn bg-[#0E7A81] text-white mt-2" >View More</button></a>
           <img
             class="md:w-[800px] md:h-[450px]"
             src="./images/pet.webp"
@@ -68,23 +68,40 @@
         </div>
       </section>
         <!-- New section that will interect with js and complile  -->
-
       <section class="container mx-auto flex flex-col items-center justify-center">
         <h1 class="font-black text-[40px] text-[#131313] text-center">Adopt Your Best Friend</h1>
         <p class="text-[16px] font-normal text-center ">
           Give a Loving Home to a Pet in Need.
           Create Unforgettable Memories Together!
         </p>
-        <!-- now buttons are below for connect to api with js -->
-         <div class="buttonDiv flex items-center justify-between container mx-auto px-3" id="buttonShow ">
-          <button class="btn md:w-[312px] md:h-[100px]  bg-emerald-300">
-            <img src="" >
-            <p>Dog</p>
-          </button>
-          
+        <!-- now buttons -->
+         <div class="buttonDiv flex items-center justify-between container mx-auto px-3 my-4">
+    
+            <!-- Dogs -->
+            <button class="btn btn-outline btn-lg"  id="buttonDog">
+                <img src="./images/dog.png" alt="Dogs" class="w-10 h-10 mr-2" />
+                <span>Dogs</span>
+            </button>
+            
+            <!-- Cats (Selected) -->
+            <button class="btn btn-outline btn-lg bg-blue-100 border-blue-500" id="buttonCat">
+                <img src="./images/cat.png" alt="Cats" class="w-10 h-10 mr-2" />
+                <span>Cats</span>
+            </button>
+        
+            <!-- Rabbits -->
+            <button class="btn btn-outline btn-lg" id="buttonRabbits">
+                <img src="./images/rabbit.png" alt="Rabbits" class="w-10 h-10 mr-2" />
+                <span>Rabbits</span>
+            </button>
+        
+            <!-- Birds -->
+            <button class="btn btn-outline btn-lg" id="buttonBirds">
+                <img src="./images/parrot.png" alt="Birds" class="w-10 h-10 mr-2" />
+                <span>Birds</span>
+            </button>
          </div>
       </section>
-
       <!-- view div  -->
       <section id="container mx-auto " >
         <!-- Header Div  -->
@@ -94,7 +111,7 @@
         </div>
 <!-- That have 2 separate view , one is show the button clikced galary and another is show the liked things  -->
 
-        <div class=" mx-auto flex flex-row items-start justify-center my-3">
+        <div class=" mx-auto  flex flex-row items-start justify-center my-3">
           <!-- 80% width  -->
           <div id="gallery" class="flex flex-wrap md:w-[80%] justify-center overflow-y-auto"  style="max-height: 560px;gap: 3px;">
             
@@ -113,7 +130,6 @@
 
 
       </section>
-
     </main>
 
     <!-- Footer section  -->
