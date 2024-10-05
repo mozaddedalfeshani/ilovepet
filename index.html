@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css",
       rel="stylesheet"
       type="text/css"
     />
@@ -94,10 +94,7 @@
           </button>
 
           <!-- Cats (Selected) -->
-          <button
-            class="btn btn-outline btn-lg "
-            id="buttonCat"
-          >
+          <button class="btn btn-outline btn-lg" id="buttonCat">
             <img src="./images/cat.png" alt="Cats" class="w-10 h-10 mr-2" />
             <span>Cats</span>
           </button>
@@ -135,28 +132,31 @@
 
         <div class="mx-auto flex flex-row items-start justify-center my-3">
           <!-- 80% width  -->
-          <section id="no-data-message"  style="display: none;" class="flex flex-col items-center justify-center h-[560px] w-full">
-
+          <section
+            id="no-data-message"
+            style="display: none"
+            class="flex flex-col items-center justify-center h-[560px] w-full"
+          >
             <div class="flex flex-col items-center justify-center h-full">
               <img
-              src="./images/error.webp"
-              class="text-center"
-              alt="No Data"
-              style="width: 153px; height: 155px"
-          />
-          <p class="text-[32px] font-bold text-center">No Information Available</p>
-          <p class="text-[16px] text-center">
-            We will try to Available as soon as possible
-          </p>
+                src="./images/error.webp"
+                class="text-center"
+                alt="No Data"
+                style="width: 153px; height: 155px"
+              />
+              <p class="text-[32px] font-bold text-center">
+                No Information Available
+              </p>
+              <p class="text-[16px] text-center">
+                We will try to Available as soon as possible
+              </p>
             </div>
-          
           </section>
           <div
             id="gallery"
             class="flex flex-wrap md:w-[80%] justify-center overflow-y-auto"
             style="max-height: 560px; gap: 3px"
           >
-          
             <!-- Add more cards here -->
           </div>
 
@@ -169,7 +169,12 @@
           </div>
         </div>
       </section>
+      <!-- CREATING THE MODAL  -->
     </main>
+    <section
+      id="modalDiv"
+      class="rounded-md hidden fixed hidden inset-0 h-full w-full justify-center items-center z-50"
+    ></section>
 
     <!-- Footer section  -->
     <section id="footer">
