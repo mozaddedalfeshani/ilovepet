@@ -11,6 +11,28 @@ const buttonRabbits = document.getElementById('buttonRabbits');
 const buttonBirds = document.getElementById('buttonBirds');
 const noDataMessage = document.getElementById('no-data-message');
 
+/////////// Color change or Mentioned as mark to select
+
+// Function to handle button clicks and apply selected styles
+function handleButtonClick(selectedButton) {
+    // Clear selected styles from all buttons asdfjkal hsdf
+    [buttonDogs, buttonCat, buttonRabbits, buttonBirds].forEach(button => {
+        button.classList.remove('bg-blue-100', 'border-blue-500');
+    });
+
+    // Apply selected styles to the clicked button yehdhsaklfhadkls;fjklads
+    selectedButton.classList.add('bg-blue-100', 'border-blue-500');
+}
+
+// Event listeners for each button
+buttonDogs.addEventListener('click', () => handleButtonClick(buttonDogs));
+buttonCat.addEventListener('click', () => handleButtonClick(buttonCat));
+buttonRabbits.addEventListener('click', () => handleButtonClick(buttonRabbits));
+buttonBirds.addEventListener('click', () => handleButtonClick(buttonBirds));
+
+
+///////////////////////////////////////
+
 // Main function to fetch pet data and initialize the gallery
 async function initPetGallery(apiUrl) {
     const gallery = document.getElementById('gallery');
@@ -145,7 +167,8 @@ async function initPetGalleryy(apiUrl) {
         if (petData && petData.pets) {
             // Initially display the pets without sorting
             petData.pets.forEach(pet => addPetCard(pet));
-        } else {
+        }
+         else {
             console.error('No pets found in the data:', petData); // Debugging: Log an error if no pets found
         }
     } catch (error) {
