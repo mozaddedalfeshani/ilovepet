@@ -9,6 +9,7 @@ const buttonDogs = document.getElementById('buttonDog');
 const buttonCat = document.getElementById('buttonCat');
 const buttonRabbits = document.getElementById('buttonRabbits');
 const buttonBirds = document.getElementById('buttonBirds');
+const noDataMessage = document.getElementById('no-data-message');
 
 // Main function to fetch pet data and initialize the gallery
 async function initPetGallery(apiUrl) {
@@ -26,9 +27,16 @@ async function initPetGallery(apiUrl) {
         const data = await response.json();
         console.log('Fetched data:', data); // Debugging: Log the fetched data
 
-        if (data && data.data) { // Adjusted to check for data.data
+        if (data && data.data && data.data.length!==0) {
+            noDataMessage.style.display ='none';
             data.data.forEach(pet => addPetCard(pet));
-        } else {
+            console.log();
+        } 
+        else if(data.data.length==0){
+            noDataMessage.style.display ='block';
+        }
+        
+        else {
             console.error('No pets found in the data:', data); // Debugging: Log an error if no pets found
         }
     } catch (error) {
@@ -98,8 +106,8 @@ function logPetImage(imageUrl) {
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
     imgElement.alt = "Liked Pet Image";
-    imgElement.style.width = "50px";  // Set width to 50px
-    imgElement.style.height = "50px";  // Set height to 50px
+    imgElement.style.width = "124px";  // Set width to 124px
+    imgElement.style.height = "124px";  // Set height to 124px
     imgElement.style.margin = "5px";    // Add some spacing between images
     imgElement.style.borderRadius = "10px";
 
@@ -225,8 +233,8 @@ function logPetImage(imageUrl) {
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
     imgElement.alt = "Liked Pet Image";
-    imgElement.style.width = "50px";  // Set width to 50px
-    imgElement.style.height = "50px";  // Set height to 50px
+    imgElement.style.width = "124px";  // Set width to 124px
+    imgElement.style.height = "124px";  // Set height to 124px
     imgElement.style.margin = "5px";    // Add some spacing between images
     imgElement.style.borderRadius = "10px";
 

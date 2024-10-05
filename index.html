@@ -18,14 +18,14 @@
     <header class="container mx-auto">
       <div class="navbar bg-base-100">
         <div class="navbar-start">
-          <img src="./images/logo.webp"  />
+          <img src="./images/logo.webp" />
           <a class="p-1 text-xl text-[32px] font-black">Peddy</a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
             <li class="text-[16px]"><a>Home</a></li>
-            <li class="text-[16px]"><a>Shop</a></li>
-            <li class="text-[16px]"><a>Contact</a></li>
+            <li class="text-[16px]"><a href="#gallery">Shop</a></li>
+            <li class="text-[16px]"><a href="#footer">Contact</a></li>
           </ul>
         </div>
         <div class="navbar-end rounded-full">
@@ -58,7 +58,11 @@
             line. It invites readers to embrace the journey of adoption with
             warmth and positivity
           </p>
-          <a href="#main"><button  class="btn bg-[#0E7A81] text-white mt-2" >View More</button></a>
+          <a href="#main"
+            ><button class="btn bg-[#0E7A81] text-white mt-2">
+              View More
+            </button></a
+          >
           <img
             class="md:w-[800px] md:h-[450px]"
             src="./images/pet.webp"
@@ -67,79 +71,118 @@
           />
         </div>
       </section>
-        <!-- New section that will interect with js and complile  -->
-      <section class="container mx-auto flex flex-col items-center justify-center">
-        <h1 class="font-black text-[40px] text-[#131313] text-center">Adopt Your Best Friend</h1>
-        <p class="text-[16px] font-normal text-center ">
-          Give a Loving Home to a Pet in Need.
-          Create Unforgettable Memories Together!
+      <!-- New section that will interect with js and complile  -->
+      <section
+        class="container mx-auto flex flex-col items-center justify-center"
+      >
+        <h1 class="font-black text-[40px] text-[#131313] text-center">
+          Adopt Your Best Friend
+        </h1>
+        <p class="text-[16px] font-normal text-center">
+          Give a Loving Home to a Pet in Need. Create Unforgettable Memories
+          Together!
         </p>
         <!-- now buttons -->
-         <div class="buttonDiv flex items-center justify-between container mx-auto px-3 my-4">
-    
-            <!-- Dogs -->
-            <button class="btn btn-outline btn-lg"  id="buttonDog">
-                <img src="./images/dog.png" alt="Dogs" class="w-10 h-10 mr-2" />
-                <span>Dogs</span>
-            </button>
-            
-            <!-- Cats (Selected) -->
-            <button class="btn btn-outline btn-lg bg-blue-100 border-blue-500" id="buttonCat">
-                <img src="./images/cat.png" alt="Cats" class="w-10 h-10 mr-2" />
-                <span>Cats</span>
-            </button>
-        
-            <!-- Rabbits -->
-            <button class="btn btn-outline btn-lg" id="buttonRabbits">
-                <img src="./images/rabbit.png" alt="Rabbits" class="w-10 h-10 mr-2" />
-                <span>Rabbits</span>
-            </button>
-        
-            <!-- Birds -->
-            <button class="btn btn-outline btn-lg" id="buttonBirds">
-                <img src="./images/parrot.png" alt="Birds" class="w-10 h-10 mr-2" />
-                <span>Birds</span>
-            </button>
-         </div>
+        <div
+          class="buttonDiv flex items-center justify-between container mx-auto px-3 my-4"
+        >
+          <!-- Dogs -->
+          <button class="btn btn-outline btn-lg" id="buttonDog">
+            <img src="./images/dog.png" alt="Dogs" class="w-10 h-10 mr-2" />
+            <span>Dogs</span>
+          </button>
+
+          <!-- Cats (Selected) -->
+          <button
+            class="btn btn-outline btn-lg bg-blue-100 border-blue-500"
+            id="buttonCat"
+          >
+            <img src="./images/cat.png" alt="Cats" class="w-10 h-10 mr-2" />
+            <span>Cats</span>
+          </button>
+
+          <!-- Rabbits -->
+          <button class="btn btn-outline btn-lg" id="buttonRabbits">
+            <img
+              src="./images/rabbit.png"
+              alt="Rabbits"
+              class="w-10 h-10 mr-2"
+            />
+            <span>Rabbits</span>
+          </button>
+
+          <!-- Birds -->
+          <button class="btn btn-outline btn-lg" id="buttonBirds">
+            <img src="./images/parrot.png" alt="Birds" class="w-10 h-10 mr-2" />
+            <span>Birds</span>
+          </button>
+        </div>
       </section>
       <!-- view div  -->
-      <section id="container mx-auto " >
+      <section id="container mx-auto ">
         <!-- Header Div  -->
         <div class="flex items-center justify-between px-4 my-2">
           <p class="text-[24px] font-black text-[#000000]">Best Deal For You</p>
-          <button onclick="sortPetsByPrice()" class="btn text-[20px] text-white bg-[#0E7A81]">Sort by Price</button>
+          <button
+            onclick="sortPetsByPrice()"
+            class="btn text-[20px] text-white bg-[#0E7A81]"
+          >
+            Sort by Price
+          </button>
         </div>
-<!-- That have 2 separate view , one is show the button clikced galary and another is show the liked things  -->
+        <!-- That have 2 separate view , one is show the button clikced galary and another is show the liked things  -->
 
-        <div class=" mx-auto  flex flex-row items-start justify-center my-3">
+        <div class="mx-auto flex flex-row items-start justify-center my-3">
           <!-- 80% width  -->
-          <div id="gallery" class="flex flex-wrap md:w-[80%] justify-center overflow-y-auto"  style="max-height: 560px;gap: 3px;">
-            
+          <section id="no-data-message"  style="display: none;" class="flex flex-col items-center justify-center h-[560px] w-full">
 
-            
+            <div class="flex flex-col items-center justify-center h-full">
+              <img
+              src="./images/error.webp"
+              class="text-center"
+              alt="No Data"
+              style="width: 153px; height: 155px"
+          />
+          <p class="text-[32px] font-bold text-center">No Information Available</p>
+          <p class="text-[16px] text-center">
+            We will try to Available as soon as possible
+          </p>
+            </div>
+          
+          </section>
+          <div
+            id="gallery"
+            class="flex flex-wrap md:w-[80%] justify-center overflow-y-auto"
+            style="max-height: 560px; gap: 3px"
+          >
+          
             <!-- Add more cards here -->
           </div>
-          
-          
+
           <!-- 20% div  -->
-          <div class="likedDiv md:w-[20%] flex flex-wrap" style="max-height: 560px; overflow-y: auto;"><div id="likedDiv"></div></div>
-            
-          
-          
+          <div
+            class="likedDiv md:w-[20%] flex flex-wrap"
+            style="max-height: 560px; overflow-y: auto"
+          >
+            <div id="likedDiv"></div>
+          </div>
         </div>
-
-
       </section>
     </main>
 
     <!-- Footer section  -->
-    <section class="">
+    <section id="footer">
       <footer class="bg-neutral-900 text-neutral-content py-7">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-around">
+        <div
+          class="container mx-auto flex flex-col md:flex-row items-center justify-around"
+        >
           <!-- Left Column: Brand and Contact Information -->
           <div>
             <h2 class="text-2xl font-bold mb-4 flex items-center">
-              <span class="mr-2 text-teal-400"><img src="./images/logo.webp" alt=""></span> Peddy
+              <span class="mr-2 text-teal-400"
+                ><img src="./images/logo.webp" alt=""
+              /></span>
+              Peddy
             </h2>
             <p>Location: av. Washington 165, NY CA 54003</p>
             <p>Phone: +31 85 964 47 25</p>
@@ -147,21 +190,33 @@
             <p>Opening hours: 9:00 AM - 5:00 PM</p>
             <!-- Social Icons -->
             <div class="flex mt-4 space-x-4">
-              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
-                <img src="./images/facebook.png" alt="">
+              <a
+                href="#"
+                class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]"
+              >
+                <img src="./images/facebook.png" alt="" />
               </a>
-              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
-                <img src="./images/twitter.png" alt="">
+              <a
+                href="#"
+                class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]"
+              >
+                <img src="./images/twitter.png" alt="" />
               </a>
-              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
-                <img src="./images/youtube.png" alt="">
+              <a
+                href="#"
+                class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]"
+              >
+                <img src="./images/youtube.png" alt="" />
               </a>
-              <a href="#" class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]">
-                <img src="./images/instagram.png" alt="">
+              <a
+                href="#"
+                class="text-neutral-content hover:text-teal-400 w-[32px] h-[32px]"
+              >
+                <img src="./images/instagram.png" alt="" />
               </a>
             </div>
           </div>
-      
+
           <!-- Center Column: Useful Links -->
           <div>
             <h2 class="text-lg font-bold mb-4">Useful Links</h2>
@@ -173,18 +228,25 @@
               <li><a href="#" class="hover:text-teal-400">Contact</a></li>
             </ul>
           </div>
-      
+
           <!-- Right Column: Subscription Form -->
           <div>
             <h2 class="text-lg font-bold mb-4">Drop a Message</h2>
             <div class="flex flex-col">
-              <input type="email" placeholder="Enter your email" class="input input-bordered w-full mb-4 bg-neutral-800 text-neutral-content"/>
-              <button class="btn btn-primary bg-teal-400 hover:bg-teal-500 text-white">Subscribe</button>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="input input-bordered w-full mb-4 bg-neutral-800 text-neutral-content"
+              />
+              <button
+                class="btn btn-primary bg-teal-400 hover:bg-teal-500 text-white"
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
       </footer>
-      
     </section>
 
     <script src="./script.js"></script>
