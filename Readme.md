@@ -18,7 +18,7 @@ The Pet Adoption Gallery is a web application designed to help users find their 
 - **Spread Operator**: Employed for combining arrays and objects in a concise way.
 
 ## Live Link
-[View the Live Project](https://https://ilovepet.netlify.app/)
+[View the Live Project](https://ilovepet.netlify.app/)
 
 
 ## <span style="color:red;">About ME</span>
