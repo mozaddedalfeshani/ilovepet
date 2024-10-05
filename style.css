@@ -3,4 +3,11 @@
 body {
     font-family: 'Lato', sans-serif;
  }
-  
+ .likedDiv {
+    max-height: 460px;         /* Limit height */
+    overflow-y: auto;          /* Enable vertical scrolling */
+    display: flex;             /* Use flexbox for layout */
+    flex-wrap: wrap;           /* Allow items to wrap */
+    gap: 5px;                  /* Space between images */
+    justify-content: flex-start; /* Align items to the left */
+}

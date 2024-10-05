@@ -94,47 +94,21 @@
         </div>
 <!-- That have 2 separate view , one is show the button clikced galary and another is show the liked things  -->
 
-        <div class="container mx-auto flex flex-row items-center justify-center">
+        <div class=" mx-auto flex flex-row items-start justify-center my-3">
           <!-- 80% width  -->
-          <div id="gallery" class="flex flex-wrap md:w-[80%] justify-center">
-            <div class="card w-96 bg-base-100 shadow-md rounded-lg p-4 m-4">
-              <figure>
-                <img src="https://via.placeholder.com/300x200" alt="Pets" class="rounded-lg" />
-              </figure>
-              <div class="card-body">
-                <h2 class="card-title text-2xl font-bold">Mister Tartosh</h2>
-                <p class="flex items-center">
-                  <span class="mr-2">🧬</span> 
-                  <span>Breed: Golden Retriever</span>
-                </p>
-                <p class="flex items-center">
-                  <span class="mr-2">📅</span>
-                  <span>Birth: 2024</span>
-                </p>
-                <p class="flex items-center">
-                  <span class="mr-2">♀️</span>
-                  <span>Gender: Female</span>
-                </p>
-                <p class="flex items-center">
-                  <span class="mr-2">💲</span>
-                  <span>Price: 199$</span>
-                </p>
-                <div class="card-actions justify-between mt-4">
-                  <button class="btn btn-outline btn-primary">👍</button>
-                  <button class="btn btn-outline btn-primary">Adopt</button>
-                  <button class="btn btn-outline">Details</button>
-                </div>
-              </div>
-            </div>
+          <div id="gallery" class="flex flex-wrap md:w-[80%] justify-center overflow-y-auto"  style="max-height: 560px;gap: 3px;">
+            
+
             
             <!-- Add more cards here -->
           </div>
           
           
           <!-- 20% div  -->
-           <div class="likedDiv md:w-[20%]">
-
-           </div>
+          <div class="likedDiv md:w-[20%] flex flex-wrap" style="max-height: 560px; overflow-y: auto;"><div id="likedDiv"></div></div>
+            
+          
+          
         </div>
 
 
@@ -143,7 +117,7 @@
     </main>
 
     <!-- Footer section  -->
-    <section class="container mx-auto ">
+    <section class="">
       <footer class="bg-neutral-900 text-neutral-content py-7">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-around">
           <!-- Left Column: Brand and Contact Information -->

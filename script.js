@@ -60,6 +60,24 @@ function addPetCard(pet) {
 // This function will be triggered when the like button is clicked
 function logPetImage(imageUrl) {
     console.log(`Liked Pet Image URL: ${imageUrl}`);
+
+    // Append the image to the likedDiv
+    const likedDiv = document.querySelector('.likedDiv');
+
+    if (!likedDiv) {
+        console.error("LikedDiv element not found.");
+        return;
+    }
+
+    const imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
+    imgElement.alt = "Liked Pet Image";
+    imgElement.style.width = "124px";  // Set width
+    imgElement.style.height = "124px";  // Set height
+    imgElement.style.margin = "5px";   // Add some spacing between images
+    imgElement.style.borderRadius = "10px";
+
+    likedDiv.appendChild(imgElement);  // Append the new image to the likedDiv
 }
 
 // Example of how you can use this:
