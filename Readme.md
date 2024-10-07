@@ -6,7 +6,7 @@ The Pet Adoption Gallery is a web application designed to help users find their 
 ## Key Features
 1. **Dynamic Gallery**: Displays a list of pets fetched from a remote API, allowing users to see available pets in real-time.
 2. **Sorting Functionality**: Users can sort pets by price, enabling them to find pets within their budget quickly.
-3. **Responsive Design**: The application is not mobile-friendly,not ensuring a seamless experience on both desktop and mobile devices.
+3. **Responsive Design**: The application is mobile-friendly, ensuring a seamless experience on both desktop and mobile devices.
 4. **User Interactivity**: Users can like pets and view liked pet images in a dedicated section.
 5. **Error Handling**: The application gracefully handles API errors and displays an informative message when no data is available.
 

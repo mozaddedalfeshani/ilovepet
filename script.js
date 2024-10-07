@@ -252,6 +252,7 @@ function sortPetsByPrice() {
 
   // Clear the existing gallery content
   gallery.innerHTML = "";
+  noDataMessage.style.display ='none';
 
   // Sort the pets array by descending price
   petData.pets.sort((a, b) => b.price - a.price);
